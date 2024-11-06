@@ -7,7 +7,13 @@
         <groupId>com.mycompany.app</groupId>
         <artifactId>Test1</artifactId>
         <version>1.0-test</version>
-
+    <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.28</version>
+        </dependency>
+    </dependencies>
     <properties>
 <!--        <src.dir>s</src.dir>-->
         <maven.compiler.source>11</maven.compiler.source>
