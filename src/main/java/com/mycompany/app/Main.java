@@ -17,14 +17,18 @@ public class Main {
         int retries = 100;
         for (int i = 0; i < retries; ++i) {
             System.out.println("Connecting to database...");
+            System.out.println("Hello");
             try {
                 // Wait a bit for db to start
-                Thread.sleep(30000);
-                // Connect to database (replace `world_db` with your actual database name if different)
-                con = DriverManager.getConnection("jdbc:mysql://db:3306/world_db?useSSL=false", "root", "example");
+                Thread.sleep(3000);
+                // Connect to the database (use 'world_db' in the connection string)
+                if (args.length!=0 && args[0].equals("DEBUG")) {
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:33060/world?useSSL=false", "root", "group40password");
+                }
+                else {
+                    con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "group40password");
+                }
                 System.out.println("Successfully connected");
-                // Wait a bit
-                Thread.sleep(10000);
                 // Exit for loop
                 break;
             } catch (SQLException sqle) {
@@ -45,3 +49,4 @@ public class Main {
         }
     }
 }
+
